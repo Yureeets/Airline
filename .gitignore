@@ -2,13 +2,12 @@
 .idea/
 .vscode/
 *.sublime-*
-
+.idea
 # Ignore compiled binaries
 *.exe
 *.dll
 *.so
 *.dylib
-
 # Ignore dependencies
 /node_modules/
 /bower_components/
@@ -27,3 +26,4 @@ __pycache__/
 
 # Virtual environment
 venv/
+.DS_Store

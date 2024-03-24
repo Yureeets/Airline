@@ -10,7 +10,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background-image: url('../img/plane.png');
+    background-image: url('../img/plane1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -86,7 +86,7 @@ h1 {
     font-weight: bold;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    text-align: center;
+    text-align: left;
 }
 
 nav {

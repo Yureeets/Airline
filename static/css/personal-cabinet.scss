@@ -1,12 +1,19 @@
-@charset "UTF-8";
+// Оголошення змінних
+$container: #e0e2e8;
+$topbg: #fff;
+$bottombg: #fff;
+$font: "Open Sans", sans-serif;
+$grey: #6c6c6c;
+
+// Глобальні стилі
 body, p, h1 {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: $font;
 }
 
 body {
-  background-image: url("../img/plane1.jpg");
+  background-image: url('../img/plane1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -68,7 +75,7 @@ nav a:hover {
 
 .bottom {
   padding: 20px;
-  background: #fff;
+  background: $bottombg;
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
   text-align: center;
@@ -98,6 +105,7 @@ nav a:hover {
   font-weight: bold;
 }
 
+//
 .ticket {
   margin: auto; /* Видалено */
   display: flex;
@@ -213,6 +221,7 @@ nav a:hover {
   font-size: 16px;
 }
 
+
 .location {
   display: flex;
   justify-content: space-around;
@@ -263,5 +272,3 @@ nav a:hover {
 .right .ticket-number {
   color: gray;
 }
-
-/*# sourceMappingURL=personal-cabinet.css.map */
