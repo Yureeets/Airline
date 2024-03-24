@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Flight Search Results</title>
+    <link rel="stylesheet" href="{% static 'css/flightSearchByCities.css' %}">
+
+</head>
+<body>
+{% include 'layout2.html' %}
+<h1>Flight Search Results</h1>
+
+{% if flights %}
+    <table>
+        <thead>
+        <tr>
+            <th>Origin City</th>
+            <th>Destination City</th>
+            <th>Departure Time:</th>
+            <th>Time to Fly</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for flight in flights %}
+            <tr>
+                <td>{{ flight.origin_city }}</td>
+                <td>{{ flight.destination_city }}</td>
+                <td>{{ flight.depart_time }}</td>
+                <td>{{ flight.duration }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No flights found.</p>
+{% endif %}
+
+{% include 'layout.html' %}
+
+
+</body>
+</html>
