@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/sign-up.css' %}"> <!-- Adjust the path to your CSS file -->
+</head>
+<body>
+<img src="{% static 'img/plane1.jpg' %}" alt="Background" class="background"> <!-- Use Django static tag -->
+<form method="post"> <!-- Make sure to set method="post" for form submission -->
+    {% csrf_token %} <!-- Add CSRF token for security -->
+    <h3>Sign Up</h3>
+    <label for="username">Username</label>
+    <input type="text" placeholder="Email or Phone" id="username" name="username"> <!-- Add name attribute for form data -->
+    <label for="gmail">Gmail</label>
+    <input type="text" placeholder="example@gmail.com" id="gmail" name="email"> <!-- Add name attribute for form data -->
+    <label for="password">Create Your Password:</label>
+    <input type="password" placeholder="Password" id="password" name="password1"> <!-- Add name attribute for form data -->
+    <label for="passwordConfirm">Confirm Your Password:</label>
+    <input type="password" placeholder="Password" id="passwordConfirm" name="password2"> <!-- Add name attribute for form data -->
+    <button type="submit">Sign Up</button> <!-- Change to type="submit" for form submission -->
+    <div class="options">
+        <a href="{% url 'login' %}">Already have an account? Sign in</a>
+    </div>
+</form>
+</body>
+</html>

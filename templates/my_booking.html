@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Booking</title>
+</head>
+<body>
+    <h1>My Booking</h1>
+    <ul id="ticketList"></ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchTickets();
+        });
+
+        function fetchTickets() {
+            fetch('/api/my_booking/')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json(); 
+            })
+            .then(data => {
+                
+                const ticketList = document.getElementById('ticketList');
+                ticketList.innerHTML = '';
+
+                
+                data.forEach(ticket => {
+                    const listItem = document.createElement('li');
+                    
+                    listItem.innerHTML = `
+                        <strong>Ticket ID:</strong> ${ticket.id} <br>
+                        <strong>User:</strong> ${ticket.user} <br>
+                        <strong>Flight:</strong> ${ticket.flight} <br>
+                        <strong>Passengers:</strong> ${ticket.passengers} <br>
+                        <strong>Seat Class:</strong> ${ticket.seat_class} <br>
+                        <strong>Booking Date:</strong> ${ticket.booking_date} <br>
+                        <strong>Flight Departure Date:</strong> ${ticket.flight_ddate} <br>
+                        <strong>Flight Arrival Date:</strong> ${ticket.flight_adate} <br>
+                    `;
+                    ticketList.appendChild(listItem);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching tickets:', error);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}"> <!-- Adjust the path to your CSS file -->
+</head>
+<body>
+    <img src="{% static 'img/plane1.jpg' %}" alt="Background" class="background"> <!-- Adjust the path to your image -->
+    <form action="{% url 'login' %}" method="post"> <!-- Add action and method attributes -->
+        {% csrf_token %}
+        <h3>Login Here</h3>
+        <label for="username">Username</label>
+        <input type="text" placeholder="Email or Phone" id="username" name="username"> <!-- Add name attribute -->
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password" name="password"> <!-- Add name attribute -->
+        <button type="submit">Log In</button> <!-- Add type attribute -->
+        <div class="options">
+            <a href="{% url 'signup' %}">Register</a> <!-- Adjust the URL for registration -->
+        </div>
+    </form>
+</body>
+</html>

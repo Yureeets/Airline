@@ -1,0 +1,82 @@
+[
+    {
+        "model": "airline.flight",
+        "pk": 1,
+        "fields": {
+            "origin_city": "Paris",
+            "origin_code": "PAR",
+            "origin_country": "France",
+            "destination_city": "New York",
+            "destination_code": "NYC",
+            "destination_country": "United States",
+            "depart_time": "09:00:00",
+            "duration": "PT10H",
+            "plane": "Boeing 747",
+            "airline": "Air France"
+        }
+    },
+    {
+        "model": "airline.flight",
+        "pk": 2,
+        "fields": {
+            "origin_city": "Kyiv",
+            "origin_code": "KIV",
+            "origin_country": "Ukraine",
+            "destination_city": "London",
+            "destination_code": "LON",
+            "destination_country": "United Kingdom",
+            "depart_time": "12:00:00",
+            "duration": "PT3H",
+            "plane": "Airbus A320",
+            "airline": "Ukraine International Airlines"
+        }
+    },
+    {
+        "model": "airline.flight",
+        "pk": 3,
+        "fields": {
+            "origin_city": "New York",
+            "origin_code": "NYC",
+            "origin_country": "United States",
+            "destination_city": "Los Angeles",
+            "destination_code": "LAX",
+            "destination_country": "United States",
+            "depart_time": "15:00:00",
+            "duration": "PT6H",
+            "plane": "Boeing 737",
+            "airline": "Delta Air Lines"
+        }
+    },
+    {
+        "model": "airline.flight",
+        "pk": 4,
+        "fields": {
+            "origin_city": "London",
+            "origin_code": "LON",
+            "origin_country": "United Kingdom",
+            "destination_city": "Paris",
+            "destination_code": "PAR",
+            "destination_country": "France",
+            "depart_time": "08:00:00",
+            "duration": "PT2H",
+            "plane": "Airbus A319",
+            "airline": "British Airways"
+        }
+    },
+    {
+        "model": "airline.flight",
+        "pk": 5,
+        "fields": {
+            "origin_city": "Los Angeles",
+            "origin_code": "LAX",
+            "origin_country": "United States",
+            "destination_city": "Tokyo",
+            "destination_code": "TYO",
+            "destination_country": "Japan",
+            "depart_time": "14:00:00",
+            "duration": "PT12H",
+            "plane": "Boeing 777",
+            "airline": "Japan Airlines"
+        }
+    }
+]

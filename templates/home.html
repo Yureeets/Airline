@@ -1,17 +1,39 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Airlines Tickets</title>
-    <link rel="stylesheet" href="../static/css/index.css"/>
-
+    <link rel="stylesheet" href="../static/css/home.css"/>
 </head>
+<script>document.getElementById("flightForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    var originCity = document.getElementById("originCity").value;
+    var destinationCity = document.getElementById("destinationCity").value;
+
+    var url = "/api/v1/flights/?origin_city=" + encodeURIComponent(originCity) + "&destination_city=" + encodeURIComponent(destinationCity);
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error("There was a problem with the fetch operation:", error);
+        });
+});</script>
 <body>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="personal-cabinet.html">My Booking</a>
-    <a href="sign-in.html">Profile</a>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'my_booking' %}">My Booking</a>
+    <a href="{% url 'profile' %}">Profile</a>
 </nav>
 
 <h1>Welcome to Airline Tickets</h1>
@@ -45,7 +67,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="social-icons">
-                    <a href="www.linkedin.com/in/yurii-polulikh" class="social-icon">
+                    <a href="https://www.linkedin.com/in/yurii-polulikh" class="social-icon">
                         <svg height="25" width="20" viewBox="0 2 20 20" xmlns="http://www.w3.org/2000/svg">
                             <g fill="none" fill-rule="evenodd" transform="translate(-12 -12)">
                                 <path d=" m0 0h44v44h-44z"></path>
@@ -60,7 +82,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <ul>
-                    <li><a href="about.html">About Us</a></li>
+                    <a href="{% url 'about' %}">About Us</a>
                 </ul>
             </div>
         </div>
